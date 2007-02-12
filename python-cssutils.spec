@@ -1,7 +1,7 @@
 %define		module	cssutils
 %define		alpha	a6
 Summary:	A CSS Cascading Style Sheets library for Python
-Summary(pl):	Biblioteka CSS (Cascading Style Sheets) dla Pythona
+Summary(pl.UTF-8):   Biblioteka CSS (Cascading Style Sheets) dla Pythona
 Name:		python-%{module}
 Version:	0.9
 Release:	0.%{alpha}.1
@@ -22,9 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A Python package to parse and build CSS Cascading Style Sheets. Partly
 implements the DOM Level 2 Stylesheets and DOM Level 2 CSS interfaces.
 
-%description -l pl
+%description -l pl.UTF-8
 Pakiet Pythona do analizy i tworzenia CSS (Cascading Style Sheets).
-Cz�ciowo implementuje interfejsy DOM Level 2 Stylesheets oraz DOM
+Częściowo implementuje interfejsy DOM Level 2 Stylesheets oraz DOM
 Level 2 CSS.
 
 %prep

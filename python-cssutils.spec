@@ -1,15 +1,13 @@
 %define		module	cssutils
-%define		alpha	a6
 Summary:	A CSS Cascading Style Sheets library for Python
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona
 Name:		python-%{module}
-Version:	0.9
-Release:	0.%{alpha}.1
+Version:	0.9.5.1
+Release:	1
 License:	LGPL v2.1
 Group:		Libraries/Python
-Source0:	http://cheeseshop.python.org/packages/source/c/cssutils/%{module}-%{version}%{alpha}.zip
-# Source0-md5:	fadcfa5370481f4692fb42fd0c96166b
-Patch0:		%{name}-ez.patch
+Source0:	http://cheeseshop.python.org/packages/source/c/cssutils/%{module}-%{version}.zip
+# Source0-md5:	b5ee33892918c6589017cfb318db8190
 URL:		http://cthedot.de/cssutils/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-setuptools
@@ -28,8 +26,7 @@ Częściowo implementuje interfejsy DOM Level 2 Stylesheets oraz DOM
 Level 2 CSS.
 
 %prep
-%setup -q -n %{module}-%{version}%{alpha}
-%patch -p1
+%setup -q -n %{module}-%{version}
 
 %build
 python setup.py build
@@ -52,9 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{py_sitescriptdir}/cssutils
 %dir %{py_sitescriptdir}/cssutils/css
 %dir %{py_sitescriptdir}/cssutils/stylesheets
-%dir %{py_sitescriptdir}/cssutils/tests
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/css/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/stylesheets/*.py[co]
-%attr(755,root,root) %{py_sitescriptdir}/cssutils/tests/*.py[co]
 %{py_sitescriptdir}/*.egg-info

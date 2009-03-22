@@ -1,10 +1,11 @@
 %define		module	cssutils
+%define		encutils_ver 0.8.3.1
 Summary:	A CSS Cascading Style Sheets library for Python
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona
 Name:		python-%{module}
 Version:	0.9.6a2
-Release:	1
-License:	LGPL v2.1
+Release:	2
+License:	LGPL v3+
 Group:		Libraries/Python
 Source0:	http://cheeseshop.python.org/packages/source/c/cssutils/%{module}-%{version}.zip
 # Source0-md5:	dd824710a5915debf177afa1dc8767e3
@@ -15,6 +16,8 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.174
 BuildRequires:	unzip
 %pyrequires_eq	python-modules
+Provides:	python-encutils = %{encutils_ver}
+Obsoletes:	python-encutils < %{encutils_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,6 +31,11 @@ Level 2 CSS.
 
 %prep
 %setup -q -n %{module}-%{version}
+eval $(PYTHONPATH=src python -c "from encutils import VERSION;print 'VERSION=%%s' %% VERSION")
+if [ $VERSION != %{encutils_ver} ]; then
+	echo "Please set encutils_ver to $VERSION"
+	exit 1
+fi
 
 %build
 python setup.py build

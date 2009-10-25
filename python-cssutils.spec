@@ -1,14 +1,14 @@
 %define		module	cssutils
-%define		encutils_ver 0.8.3.1
+%define		encutils_ver 0.9
 Summary:	A CSS Cascading Style Sheets library for Python
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona
 Name:		python-%{module}
-Version:	0.9.6a2
-Release:	2
+Version:	0.9.6b5
+Release:	1
 License:	LGPL v3+
 Group:		Libraries/Python
 Source0:	http://cheeseshop.python.org/packages/source/c/cssutils/%{module}-%{version}.zip
-# Source0-md5:	dd824710a5915debf177afa1dc8767e3
+# Source0-md5:	b2f7a8ca734db4bbcb7bb34ed7031100
 URL:		http://cthedot.de/cssutils/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-setuptools

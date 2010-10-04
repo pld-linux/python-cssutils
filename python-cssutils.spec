@@ -3,12 +3,12 @@
 Summary:	A CSS Cascading Style Sheets library for Python
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona
 Name:		python-%{module}
-Version:	0.9.6b5
-Release:	2
+Version:	0.9.7b3
+Release:	0.beta.1
 License:	LGPL v3+
 Group:		Libraries/Python
 Source0:	http://cheeseshop.python.org/packages/source/c/cssutils/%{module}-%{version}.zip
-# Source0-md5:	b2f7a8ca734db4bbcb7bb34ed7031100
+# Source0-md5:	4539c061bb03612cc3a0e278c44e8f96
 URL:		http://cthedot.de/cssutils/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-setuptools
@@ -64,13 +64,13 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{py_sitescriptdir}/cssutils/scripts
 %dir %{py_sitescriptdir}/cssutils/stylesheets
 %dir %{py_sitescriptdir}/encutils
-%dir %{py_sitescriptdir}/tests
-%dir %{py_sitescriptdir}/tests/test_encutils
+#%%dir %{py_sitescriptdir}/tests
+#%%dir %{py_sitescriptdir}/tests/test_encutils
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/css/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/scripts/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/stylesheets/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/encutils/*.py[co]
-%attr(755,root,root) %{py_sitescriptdir}/tests/*.py[co]
-%attr(755,root,root) %{py_sitescriptdir}/tests/test_encutils/*.py[co]
+#%%attr(755,root,root) %{py_sitescriptdir}/tests/*.py[co]
+#%%attr(755,root,root) %{py_sitescriptdir}/tests/test_encutils/*.py[co]
 %{py_sitescriptdir}/*.egg-info

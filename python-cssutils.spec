@@ -4,7 +4,7 @@ Summary:	A CSS Cascading Style Sheets library for Python
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona
 Name:		python-%{module}
 Version:	0.9.6b5
-Release:	2
+Release:	3
 License:	LGPL v3+
 Group:		Libraries/Python
 Source0:	http://cheeseshop.python.org/packages/source/c/cssutils/%{module}-%{version}.zip

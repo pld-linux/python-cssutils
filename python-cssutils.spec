@@ -64,13 +64,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{py_sitescriptdir}/cssutils/scripts
 %dir %{py_sitescriptdir}/cssutils/stylesheets
 %dir %{py_sitescriptdir}/encutils
-%dir %{py_sitescriptdir}/tests
-%dir %{py_sitescriptdir}/tests/test_encutils
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/css/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/scripts/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/cssutils/stylesheets/*.py[co]
 %attr(755,root,root) %{py_sitescriptdir}/encutils/*.py[co]
-%attr(755,root,root) %{py_sitescriptdir}/tests/*.py[co]
-%attr(755,root,root) %{py_sitescriptdir}/tests/test_encutils/*.py[co]
 %{py_sitescriptdir}/*.egg-info

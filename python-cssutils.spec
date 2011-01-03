@@ -3,17 +3,17 @@
 Summary:	A CSS Cascading Style Sheets library for Python
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona
 Name:		python-%{module}
-Version:	0.9.7b4
+Version:	0.9.8a1
 Release:	1
 License:	LGPL v3+
 Group:		Libraries/Python
 Source0:	http://cheeseshop.python.org/packages/source/c/cssutils/%{module}-%{version}.zip
-# Source0-md5:	ecc1fee61fad1dd0e64e1b1de478b97b
+# Source0-md5:	7b959a8bdddfa8f01fcb4e7df2310346
 URL:		http://cthedot.de/cssutils/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-setuptools
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.174
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	unzip
 %pyrequires_eq	python-modules
 Provides:	python-encutils = %{encutils_ver}
@@ -38,12 +38,12 @@ if [ $VERSION != %{encutils_ver} ]; then
 fi
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
         --single-version-externally-managed \
 	--optimize=2 \
 	--root $RPM_BUILD_ROOT

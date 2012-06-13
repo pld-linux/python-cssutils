@@ -1,5 +1,5 @@
 %define		module	cssutils
-%define		encutils_ver 0.9
+%define		encutils_ver 0.9.8
 Summary:	A CSS Cascading Style Sheets library for Python
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona
 Name:		python-%{module}

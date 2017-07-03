@@ -1,0 +1,36 @@
+--- cssutils-1.0.2/src/cssutils/tests/test_cssutils.py.orig	2017-03-04 10:53:23.000000000 +0100
++++ cssutils-1.0.2/src/cssutils/tests/test_cssutils.py	2017-07-03 21:07:40.163504334 +0200
+@@ -13,8 +13,7 @@
+ try:
+     import mock
+ except ImportError:
+-    mock = None
+-    print "install mock library to run all tests"
++    import unittest.mock as mock
+ 
+ 
+ class CSSutilsTestCase(basetest.BaseTestCase):
+--- cssutils-1.0.2/src/cssutils/tests/test_parse.py.orig	2015-11-25 23:11:26.000000000 +0100
++++ cssutils-1.0.2/src/cssutils/tests/test_parse.py	2017-07-03 21:08:16.740170584 +0200
+@@ -12,8 +12,7 @@
+ try:
+     import mock
+ except ImportError:
+-    mock = None
+-    print "install mock library to run all tests"
++    import unittest.mock as mock
+ 
+ 
+ class CSSParserTestCase(basetest.BaseTestCase):
+--- cssutils-1.0.2/src/cssutils/tests/test_util.py.orig	2016-10-27 13:55:21.000000000 +0200
++++ cssutils-1.0.2/src/cssutils/tests/test_util.py	2017-07-03 21:08:36.456837025 +0200
+@@ -13,8 +13,7 @@
+ try:
+     import mock
+ except ImportError:
+-    mock = None
+-    print "install mock library to run all tests"
++    import unittest.mock as mock
+ 
+ import basetest
+ import encutils

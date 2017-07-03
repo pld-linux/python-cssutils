@@ -1,0 +1,11 @@
+--- cssutils-1.0.2/src/cssutils/tests/test_errorhandler.py.orig	2017-07-03 19:31:47.420236687 +0200
++++ cssutils-1.0.2/src/cssutils/tests/test_errorhandler.py	2017-07-03 19:31:51.623569973 +0200
+@@ -84,7 +84,7 @@
+             self.assertEqual(str(e), 'CSSImportRule: Unexpected ident. [1:9: x]')
+             self.assertEqual(e.line, 1)
+             self.assertEqual(e.col, 9)
+-            if sys.platform.startswith('java'):
++            if sys.platform.startswith('java') or sys.version_info[0] < 3:
+                 self.assertEqual(e.msg, u'CSSImportRule: Unexpected ident. [1:9: x]')
+             else:
+                 self.assertEqual(e.args, (u'CSSImportRule: Unexpected ident. [1:9: x]',))

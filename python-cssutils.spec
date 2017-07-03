@@ -14,7 +14,7 @@ Release:	1
 Epoch:		1
 License:	LGPL v3+
 Group:		Libraries/Python
-Source0:	http://files.pythonhosted.org/packages/source/c/cssutils/%{module}-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/c/cssutils/%{module}-%{version}.tar.gz
 # Source0-md5:	dc66d96c2d78f1687f59ac412fe9d318
 Patch0:		%{name}-tests.patch
 Patch1:		%{name}-mock.patch

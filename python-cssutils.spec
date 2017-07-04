@@ -1,8 +1,9 @@
 #
 # Conditional build:
-%bcond_without	python2	# CPython 2.x module
-%bcond_without	python3 # CPython 3.x module
-%bcond_without	tests	# unit tests
+%bcond_without	python2		# CPython 2.x module
+%bcond_without	python3		# CPython 3.x module
+%bcond_without	tests		# unit tests
+%bcond_with	tests_net	# unit tests using network
 
 %define		module	cssutils
 %define		encutils_ver 0.9.8
@@ -10,7 +11,7 @@ Summary:	A CSS Cascading Style Sheets library for Python 2
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona 2
 Name:		python-%{module}
 Version:	1.0.2
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL v3+
 Group:		Libraries/Python
@@ -70,6 +71,11 @@ if [ $VERSION != %{encutils_ver} ]; then
 	echo "Please set encutils_ver to $VERSION"
 	exit 1
 fi
+
+%if %{without tests_net}
+%{__sed} -i -e 's/def test_parseUrl/def skip_parseUrl/' src/cssutils/tests/test_parse.py
+%{__sed} -i -e 's/def test_handlers/def skip_handlers/' src/cssutils/tests/test_errorhandler.py
+%endif
 
 %build
 %if %{with python2}

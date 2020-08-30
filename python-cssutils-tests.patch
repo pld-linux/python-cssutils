@@ -1,11 +1,36 @@
---- cssutils-1.0.2/src/cssutils/tests/test_errorhandler.py.orig	2017-07-03 19:31:47.420236687 +0200
-+++ cssutils-1.0.2/src/cssutils/tests/test_errorhandler.py	2017-07-03 19:31:51.623569973 +0200
-@@ -84,7 +84,7 @@
+--- cssutils-1.0.2/src/cssutils/tests/test_errorhandler.py.orig	2020-08-30 09:20:19.626140366 +0200
++++ cssutils-1.0.2/src/cssutils/tests/test_errorhandler.py	2020-08-30 09:37:59.517065111 +0200
+@@ -74,6 +74,13 @@
+ 
+     def test_linecol(self):
+         "cssutils.log line col"
++        def has_libxml2():
++            try:
++                import libxml2
++                return True
++            except:
++                return False
++
+         o = cssutils.log.raiseExceptions
+         cssutils.log.raiseExceptions = True
+         
+@@ -84,7 +91,7 @@
              self.assertEqual(str(e), 'CSSImportRule: Unexpected ident. [1:9: x]')
              self.assertEqual(e.line, 1)
              self.assertEqual(e.col, 9)
 -            if sys.platform.startswith('java'):
-+            if sys.platform.startswith('java') or sys.version_info[0] < 3:
++            if sys.platform.startswith('java') or not has_libxml2():
                  self.assertEqual(e.msg, u'CSSImportRule: Unexpected ident. [1:9: x]')
              else:
                  self.assertEqual(e.args, (u'CSSImportRule: Unexpected ident. [1:9: x]',))
+--- cssutils-1.0.2/src/cssutils/tests/test_encutils/__init__.py.orig	2015-11-25 23:11:26.000000000 +0100
++++ cssutils-1.0.2/src/cssutils/tests/test_encutils/__init__.py	2020-08-30 09:28:21.096865349 +0200
+@@ -203,7 +203,7 @@
+                 #('utf-8', u'\u1111'.encode('utf-8'))
+                 ]
+         for exp, test in tests:
+-            self.assertEqual(exp, encutils.tryEncodings(test))
++            self.assertEqual(exp, encutils.tryEncodings(test).lower())
+ 
+ 
+     def test_getEncodingInfo(self):

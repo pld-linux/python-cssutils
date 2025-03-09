@@ -64,8 +64,8 @@ Level 2 CSS.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P 0 -p1
+%patch -P 1 -p1
 
 eval $(PYTHONPATH=src python -c "from encutils import VERSION;print 'VERSION=%%s' %% VERSION")
 if [ $VERSION != %{encutils_ver} ]; then

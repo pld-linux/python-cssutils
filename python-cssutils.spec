@@ -11,7 +11,7 @@ Summary:	A CSS Cascading Style Sheets library for Python 2
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona 2
 Name:		python-%{module}
 Version:	1.0.2
-Release:	9
+Release:	10
 Epoch:		1
 License:	LGPL v3+
 Group:		Libraries/Python

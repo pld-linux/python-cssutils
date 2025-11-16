@@ -8,11 +8,13 @@
 Summary:	A CSS Cascading Style Sheets library for Python 2
 Summary(pl.UTF-8):	Biblioteka CSS (Cascading Style Sheets) dla Pythona 2
 Name:		python-%{module}
+# keep 1.x here for python2 support
 Version:	1.0.2
 Release:	12
 Epoch:		1
 License:	LGPL v3+
 Group:		Libraries/Python
+#Source0Download: https://pypi.org/simple/cssutils/
 Source0:	https://files.pythonhosted.org/packages/source/c/cssutils/%{module}-%{version}.tar.gz
 # Source0-md5:	dc66d96c2d78f1687f59ac412fe9d318
 Patch0:		%{name}-tests.patch
